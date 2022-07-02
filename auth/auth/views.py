@@ -8,7 +8,7 @@ from rest_framework.exceptions import AuthenticationFailed
 from .decorators import jwt_required
 
 class TokenDecode(APIView):
-    @jwt_required # only a valid token can access this view
+    @jwt_required
     def post(self, request):
         token = request.data.get('token', None)
         if token:
